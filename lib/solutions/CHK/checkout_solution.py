@@ -5,7 +5,7 @@
 def checkout(skus):
     purchases = sorted(skus)
     A = {"price": 50, "discount_number": 3, "discount_price": 130} 
-    B = {"price": 30, "discount_number": 2, "discount_price": 145}
+    B = {"price": 30, "discount_number": 2, "discount_price": 45}
     C = {"price": 20, "discount_number": 0, "discount_price": 0}
     D = {"price": 15, "discount_number": 0, "discount_price": 0}
 
@@ -26,7 +26,9 @@ def checkout(skus):
                 amount += available_items[purchase]["price"]
         else:
             return -1
+        
+        print(amount)
     
     return amount
 
-print(checkout("ABCD"))
+print(checkout("BBBB"))

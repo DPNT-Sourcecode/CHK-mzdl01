@@ -12,17 +12,15 @@ def checkout(skus):
                 res[purchase] += 1
             else:
                 res[purchase] = 1
+        else:
+            return -1
     amount = 0
 
     for key, val in res.items():
         off = str(val) + str(key)
-        print(off)
         if off in offers:
-            print("hi")
             amount += offers[off]
         else:
-            amount+= val
+            amount+= offers[key] * val
 
     return amount
-skus = "A,B,C,A,A"
-print(checkout(skus))

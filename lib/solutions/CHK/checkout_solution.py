@@ -8,12 +8,14 @@ def checkout(skus):
     res = {}
     for purchase in purchases:
         if purchase in offers:
-            res[purchase] = 1
-
+            if purchase in res:
+                res[purchase] += 1
+            else:
+                res[purchase] = 1
     amount = 0
 
     print(res)
 
 
-skus = "A,B,C"
+skus = "A,B,C,A,A"
 checkout(skus)

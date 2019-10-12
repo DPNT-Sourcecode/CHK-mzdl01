@@ -12,4 +12,3 @@ class TestCheckout():
     def test_offer_case():
         items = "A,B,C,A,A"
         assert checkout(items) == 180
-

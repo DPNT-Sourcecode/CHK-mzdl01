@@ -31,4 +31,3 @@ def checkout(skus):
 
 sku = "AAAA"
 print(checkout(sku))
-

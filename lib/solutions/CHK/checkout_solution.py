@@ -14,12 +14,14 @@ def checkout(skus):
                 res[purchase] = 1
     amount = 0
 
-    for key, val in enumerate(res):
-        off = str(key) + str(val)
+    for key, val in res.items():
+        off = str(val) + str(key)
+        print(off)
         if off in offers:
+            print("hi")
             amount += offers[off]
         else:
-            amount+= int(val)
+            amount+= val
 
     return amount
 skus = "A,B,C,A,A"

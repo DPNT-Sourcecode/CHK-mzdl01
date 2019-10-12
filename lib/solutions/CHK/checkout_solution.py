@@ -1,9 +1,11 @@
 
 # noinspection PyUnusedLocal
 # skus = unicode string
+from . import item
 def checkout(skus):
-    offers = {"A": 50, "B": 30 ,"C": 20, "D": 15, "3A": 130, "2B": 45}
-
+    A = Item("A", 50, 3, 130)
+    offers = {"3A": 130, "2B": 45}
+    prices = {"A": 50, "B": 30 ,"C": 20}
     if len(sku) == 0:
         return 0
 

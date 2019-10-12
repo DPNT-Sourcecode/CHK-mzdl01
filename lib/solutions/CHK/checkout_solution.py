@@ -16,7 +16,7 @@ def checkout(skus):
                 res[purchase] = 1
         else:
             return -1
-            
+
     amount = 0
 
     for key, val in res.items():
@@ -29,6 +29,6 @@ def checkout(skus):
     return amount
 
 
-sku = ["A"]
+sku = "AAAA"
 print(checkout(sku))
 

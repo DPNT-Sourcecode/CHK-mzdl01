@@ -19,16 +19,14 @@ def checkout(skus):
         if purchase in available_items:
             counts[purchase] += 1
             if counts[purchase] == available_items[purchase]["discount_number"]:
-                amount = amount - (available_items[purchase]["price"] * 2)
+                amount = amount - (available_items[purchase]["price"] * \
+                                (available_items[purchase]["discount_number"] - 1))
                 amount+= available_items[purchase]["discount_price"]
                 counts[purchase] = 0
             else:
                 amount += available_items[purchase]["price"]
         else:
-            return -1
-        
-        print(amount)
-    
+            return -1   
     return amount
 
-print(checkout("BBBB"))
+print(checkout("BBB"))

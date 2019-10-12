@@ -6,6 +6,7 @@ def checkout(skus):
 
     if len(sku) == 0:
         return 0
+
     res = {}
     for purchase in skus:
         if purchase in offers:
@@ -15,6 +16,7 @@ def checkout(skus):
                 res[purchase] = 1
         else:
             return -1
+            
     amount = 0
 
     for key, val in res.items():
@@ -27,5 +29,6 @@ def checkout(skus):
     return amount
 
 
-sku = ""
+sku = ["A"]
 print(checkout(sku))
+

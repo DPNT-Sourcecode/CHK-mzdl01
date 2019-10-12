@@ -4,7 +4,7 @@
 from item import Item
 
 def checkout(skus):
-    sorted(skus)
+    purchases = sorted(skus)
     A = Item("A", 50, 3, 130)
     B = Item("B", 30, 2, 45)
     C = Item("C", 20)
@@ -18,20 +18,20 @@ def checkout(skus):
         return 0
 
     amount = 0
-    for purchase in skus:
+    for purchase in purchases:
         if purchase in available_items:
+            print(purchase)
             counts[purchase] += 1
             if counts[purchase] == available_items[purchase].discount_number:
                 amount = amount - (available_items[purchase].amount * 2)
-                amount+= available_items[purchase].discount_number
+                amount+= available_items[purchase].discount_price
             else:
                 amount += available_items[purchase].amount
-            print(amount)
         else:
             return -1
     
     return amount
 
 
-sku = "ABAA"
+sku = "AABA"
 print(checkout(sku))

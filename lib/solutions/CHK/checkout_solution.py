@@ -4,9 +4,10 @@
 def checkout(skus):
     offers = {"A": 50, "B": 30 ,"C": 20, "D": 15, "3A": 130, "2B": 45}
 
-    purchases = skus.split(",")
+    if len(sku) == 0:
+        return 0
     res = {}
-    for purchase in purchases:
+    for purchase in skus:
         if purchase in offers:
             if purchase in res:
                 res[purchase] += 1
@@ -24,3 +25,7 @@ def checkout(skus):
             amount+= offers[key] * val
 
     return amount
+
+
+sku = ""
+print(checkout(sku))
